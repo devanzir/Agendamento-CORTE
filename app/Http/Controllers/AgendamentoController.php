@@ -20,8 +20,10 @@ class AgendamentoController extends Controller
         $request->validate([
             'nome' => 'required|string|max:255',
             'email' => 'required|email',
+            'telefone' => 'required|string|max:15',
             'data' => 'required|date',
             'hora' => 'required|date_format:H:i',
+            'servico' => 'required|string|max:255', // Nova validação para o serviço
         ]);
 
         //se já existe um agendamento para a mesma data e hora ou da erro.
@@ -41,11 +43,12 @@ class AgendamentoController extends Controller
             $donoEmail = 'fritzledir@gmail.com';
 
             # email para Lucas
-            Mail::to($donoEmail)->send(new AgendamentoMail([
+             Mail::to(self::DONO_EMAIL)->send(new AgendamentoMail([
                 'nome' => 'Studio D Quebrada',
                 'cliente_nome' => $agendamento->nome,
                 'data' => $agendamento->data,
                 'hora' => $agendamento->hora,
+                'servico' => $agendamento->servico,
                 'isDono' => true,
             ]));
 
@@ -54,6 +57,7 @@ class AgendamentoController extends Controller
                 'nome' => $agendamento->nome,
                 'data' => $agendamento->data,
                 'hora' => $agendamento->hora,
+                'servico' => $agendamento->servico, // Inclua o serviço no e-mail
                 'isDono' => false,
             ]));
 

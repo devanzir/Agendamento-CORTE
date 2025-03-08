@@ -16,6 +16,7 @@ class AgendamentoMail extends Mailable
     public $cliente_nome;
     public $data;
     public $hora;
+    public $servico;
     public $isDono;
 
     /**
@@ -27,6 +28,7 @@ class AgendamentoMail extends Mailable
         $this->cliente_nome = $data['cliente_nome'] ?? null;
         $this->data = $data['data'];
         $this->hora = $data['hora'];
+        $this->servico = $data['servico'];
         $this->isDono = $data['isDono'];
     }
 
@@ -53,6 +55,7 @@ class AgendamentoMail extends Mailable
                         'cliente_nome' => $this->cliente_nome,
                         'data' => $this->data,
                         'hora' => $this->hora,
+                        'servico' => $this->servico,
                         'isDono' => $this->isDono,
                     ]);
     }
