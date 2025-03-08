@@ -1,3 +1,27 @@
+Atualização na Página!
+
+Estamos empolgados em anunciar que a página do "Agendamento de Corte" foi atualizada! Agora, você pode escolher e agendar seu corte de maneira ainda mais fácil e rápida. Confira as novas funcionalidades e agende seu horário diretamente pelo site!
+
+Agradecemos a sua preferência e estamos à disposição para proporcionar a melhor experiência possível!
+
+![Captura de tela 2025-03-08 122756](https://github.com/user-attachments/assets/1ff2058b-a82e-48a1-bbd8-2bed1db347d9)
+
+
+
+
+
+
+
+
+
+ANTIGO EM BAIXO !
+
+
+
+
+
+
+
 ![novo projeto](https://github.com/user-attachments/assets/5a5fa057-3bc8-42e9-ad94-4227b9130284)
 
 
