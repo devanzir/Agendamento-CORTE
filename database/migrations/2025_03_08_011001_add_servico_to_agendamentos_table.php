@@ -21,7 +21,7 @@ return new class extends Migration
     public function down(): void
 {
     Schema::table('agendamentos', function (Blueprint $table) {
-        $table->string('servico')->nullable()->change(); // ou outro valor padrão que você deseje
+        $table->string('servico')->nullable()->change(); 
     });
 }
 };

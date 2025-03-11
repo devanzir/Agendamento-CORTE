@@ -23,7 +23,7 @@ class AgendamentoController extends Controller
             'telefone' => 'required|string|max:15',
             'data' => 'required|date',
             'hora' => 'required|date_format:H:i',
-            'servico' => 'required|string|max:255', // Nova validação para o serviço
+            'servico' => 'required|string|max:255', 
         ]);
 
         //se já existe um agendamento para a mesma data e hora ou da erro.
@@ -57,7 +57,7 @@ class AgendamentoController extends Controller
                 'nome' => $agendamento->nome,
                 'data' => $agendamento->data,
                 'hora' => $agendamento->hora,
-                'servico' => $agendamento->servico, // Inclua o serviço no e-mail
+                'servico' => $agendamento->servico, 
                 'isDono' => false,
             ]));
 

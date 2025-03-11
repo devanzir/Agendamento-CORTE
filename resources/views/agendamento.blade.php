@@ -44,7 +44,7 @@
             transition: color 0.3s;
         }
         .social-icons a:hover {
-            color: #484a48; /* Cor ao passar o mouse */
+            color: #484a48; 
         }
         .right-section {
             flex: 1;
@@ -88,37 +88,37 @@
         /* Media Queries */
 @media (max-width: 768px) {
     .container-fluid {
-        flex-direction: column; /* Empilha as seções verticalmente */
+        flex-direction: column; 
     }
     .left-section, .right-section {
-        max-width: 100%; /* Faz as seções ocuparem toda a largura */
+        max-width: 100%; 
     }
     h2 {
-        font-size: 28px; /* Reduz o tamanho do cabeçalho */
+        font-size: 28px; 
     }
     p {
-        font-size: 16px; /* Ajusta o tamanho do texto */
+        font-size: 16px; 
     }
     .form-container {
-        padding: 10px; /* Reduz o padding em telas menores */
+        padding: 10px; 
     }
     .social-icons {
-        justify-content: center; /* Centraliza os ícones */
+        justify-content: center; 
     }
 }
 
 @media (max-width: 480px) {
     h2 {
-        font-size: 24px; /* Tamanho ainda menor para telas muito pequenas */
+        font-size: 24px; 
     }
     p {
-        font-size: 14px; /* Ajusta o tamanho do texto */
+        font-size: 14px; 
     }
     .form-control {
-        font-size: 14px; /* Tamanho de fonte dos campos de entrada */
+        font-size: 14px; 
     }
     .btn {
-        font-size: 14px; /* Tamanho do botão */
+        font-size: 14px; 
     }
 }
     </style>
@@ -194,27 +194,26 @@
         }
 
         const maxDate = new Date();
-        maxDate.setDate(minDate.getDate() + (6 - dayOfWeek)); // Próximo sábado
-
+        maxDate.setDate(minDate.getDate() + (6 - dayOfWeek)); 
         // Definindo o atributo min e max do input de data
         $('#data').attr('min', minDate.toISOString().split('T')[0]);
         $('#data').attr('max', maxDate.toISOString().split('T')[0]);
 
         // Selecionar serviço
         $('.btn-group .btn').on('click', function() {
-            $('.btn-group .btn').removeClass('active'); // Remove a classe active de todos os botões
-            $(this).addClass('active'); // Adiciona a classe active ao botão clicado
+            $('.btn-group .btn').removeClass('active'); 
+            $(this).addClass('active'); 
 
             // Atualiza o campo oculto com o serviço selecionado
             $('#servico').val($(this).data('servico'));
-            console.log('Serviço selecionado:', $(this).data('servico')); // Log para depuração
+            console.log('Serviço selecionado:', $(this).data('servico')); 
         });
 
         // Selecionar horário
         $('.time-slot button').on('click', function() {
-            $('.time-slot button').removeClass('active'); // Remove a classe active de todos os botões
-            $(this).addClass('active'); // Adiciona a classe active ao botão clicado
-            console.log('Horário selecionado:', $(this).val()); // Log para depuração
+            $('.time-slot button').removeClass('active'); 
+            $(this).addClass('active'); 
+            console.log('Horário selecionado:', $(this).val()); 
         });
 
         $('#agendamentoForm').on('submit', function(e) {
@@ -224,8 +223,8 @@
             const email = $('#email').val();
             const telefone = $('#telefone').val();
             const data = $('#data').val();
-            const hora = $('.time-slot button.active').val(); // Captura o valor do horário ativo
-            const servico = $('#servico').val(); // Captura o valor do serviço
+            const hora = $('.time-slot button.active').val(); 
+            const servico = $('#servico').val(); 
             const observacoes = $('#observacoes').val();
 
             if (!servico) {
