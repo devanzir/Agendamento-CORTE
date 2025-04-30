@@ -85,7 +85,7 @@
         .btn-warning {
             border-radius: 25px;
         }
-        /* Media Queries */
+        
 @media (max-width: 768px) {
     .container-fluid {
         flex-direction: column; 
@@ -185,7 +185,6 @@
         const today = new Date();
         const dayOfWeek = today.getDay();
 
-        // Ajustar o valor mínimo da data
         const minDate = new Date();
         if (dayOfWeek < 2) {
             minDate.setDate(today.getDate() + (2 - dayOfWeek + 7) % 7);
@@ -195,21 +194,20 @@
 
         const maxDate = new Date();
         maxDate.setDate(minDate.getDate() + (6 - dayOfWeek)); 
-        // Definindo o atributo min e max do input de data
         $('#data').attr('min', minDate.toISOString().split('T')[0]);
         $('#data').attr('max', maxDate.toISOString().split('T')[0]);
 
-        // Selecionar serviço
+       
         $('.btn-group .btn').on('click', function() {
             $('.btn-group .btn').removeClass('active'); 
             $(this).addClass('active'); 
 
-            // Atualiza o campo oculto com o serviço selecionado
+            
             $('#servico').val($(this).data('servico'));
             console.log('Serviço selecionado:', $(this).data('servico')); 
         });
 
-        // Selecionar horário
+       
         $('.time-slot button').on('click', function() {
             $('.time-slot button').removeClass('active'); 
             $(this).addClass('active'); 
