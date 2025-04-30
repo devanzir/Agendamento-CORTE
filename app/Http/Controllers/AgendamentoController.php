@@ -26,7 +26,6 @@ class AgendamentoController extends Controller
             'servico' => 'required|string|max:255', 
         ]);
 
-        //se já existe um agendamento para a mesma data e hora ou da erro.
         $existingAgendamento = Agendamento::where('data', $request->data)
             ->where('hora', $request->hora)
             ->first();
@@ -38,11 +37,9 @@ class AgendamentoController extends Controller
 
         try {
             $agendamento = Agendamento::create($request->all());
-
-            // E-mail do Lucas
+            
             $donoEmail = 'fritzledir@gmail.com';
 
-            # email para Lucas
              Mail::to(self::DONO_EMAIL)->send(new AgendamentoMail([
                 'nome' => 'Studio D Quebrada',
                 'cliente_nome' => $agendamento->nome,
@@ -52,7 +49,6 @@ class AgendamentoController extends Controller
                 'isDono' => true,
             ]));
 
-            #email para o cliente
             Mail::to($request->email)->send(new AgendamentoMail([
                 'nome' => $agendamento->nome,
                 'data' => $agendamento->data,
